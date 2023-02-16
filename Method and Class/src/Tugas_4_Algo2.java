@@ -8,15 +8,15 @@ class List_Makanan {
     int harga_permen = 5000, n_permen = 200;
     int harga_biskuit = 25000, n_biskuit = 100;
 
-    public void Tampilkan () {
+    public void Tampilkan (int a, int b, int c, int d) {
 
         System.out.println ("\n******* Stok makanan yang tersedia *******\n");
 
         System.out.println ("|   Nama    |   Stok     |   Harga/unit  | Kode |");
-        System.out.printf ("|   Kacang  |     %d    |   Rp %d    | 1102 |\n", n_kacang, harga_kacang);
-        System.out.printf ("|  Semprong |     %d    |   Rp %d    | 1103 |\n", n_semprong, harga_semprong);
-        System.out.printf ("|   Permen  |     %d    |   Rp %d     | 1104 |\n", n_permen, harga_permen);
-        System.out.printf ("|  Biskuit  |     %d    |   Rp %d    | 1105 |\n", n_biskuit, harga_biskuit);
+        System.out.printf ("|   Kacang  |     %d    |   Rp %d    | 1102 |\n", a, harga_kacang);
+        System.out.printf ("|  Semprong |     %d    |   Rp %d    | 1103 |\n", b, harga_semprong);
+        System.out.printf ("|   Permen  |     %d    |   Rp %d     | 1104 |\n", c, harga_permen);
+        System.out.printf ("|  Biskuit  |     %d    |   Rp %d    | 1105 |\n", d, harga_biskuit);
 
     }
 
@@ -29,15 +29,15 @@ class List_Minuman {
     int harga_fanta = 12000, n_fanta = 100;
     int harga_badak = 15000, n_badak = 100;
 
-    public void Tampilkan () {
+    public void Tampilkan (int a, int b, int c, int d) {
 
         System.out.println ("\n******* Stok minuman yang tersedia *******\n");
 
         System.out.println ("|   Nama    |   Stok   |   Harga/unit   | Kode |");
-        System.out.printf ("|   Sprite   |     %d    |   Rp %d   | 1302 |\n", n_sprite, harga_sprite);
-        System.out.printf ("|   Coke     |     %d    |   Rp %d   | 1303 |\n", n_coke, harga_coke);
-        System.out.printf ("|   Fanta    |     %d    |   Rp %d   | 1304 |\n", n_fanta, harga_fanta);
-        System.out.printf ("|   Badak    |     %d    |   Rp %d   | 1305 |\n", n_badak, harga_badak);
+        System.out.printf ("|   Sprite   |     %d    |   Rp %d   | 1302 |\n", a, harga_sprite);
+        System.out.printf ("|   Coke     |     %d    |   Rp %d   | 1303 |\n", b, harga_coke);
+        System.out.printf ("|   Fanta    |     %d    |   Rp %d   | 1304 |\n", c, harga_fanta);
+        System.out.printf ("|   Badak    |     %d    |   Rp %d   | 1305 |\n", d, harga_badak);
 
     }
 
@@ -97,7 +97,7 @@ class Transaksi {
         }
         else if (kode == 1105 && habis[3] == false) {
             food.n_biskuit -= n;
-            System.out.println (food.n_biskuit);
+            //System.out.println (food.n_biskuit);
         }
         else if (kode == 1302 && habis[4] == false) {
             drink.n_sprite -= n;
@@ -125,7 +125,7 @@ class Transaksi {
         banyak_produk[0] = 150-food.n_kacang;
         banyak_produk[1] = 100-food.n_semprong;
         banyak_produk[2] = 200-food.n_permen;
-        banyak_produk[3] = 100-food.harga_biskuit;
+        banyak_produk[3] = 100-food.n_biskuit;
 
         banyak_produk[4] = 100-drink.n_sprite;
         banyak_produk[5] = 150-drink.n_coke;
@@ -202,7 +202,7 @@ public class Tugas_4_Algo2 {
             }
             else {
                 if (menu == 1) {
-                    menu_makanan.Tampilkan ();
+                    menu_makanan.Tampilkan (menu_makanan.n_kacang-pembayaran.banyak_produk[0], menu_makanan.n_semprong-pembayaran.banyak_produk[1], menu_makanan.n_permen-pembayaran.banyak_produk[2], menu_makanan.n_biskuit-pembayaran.banyak_produk[3]);
 
                     System.out.print ("\nMasukan kode makanan : ");
                     kode = input.nextInt();
@@ -213,7 +213,7 @@ public class Tugas_4_Algo2 {
                     pembayaran.Bayar (kode, banyak);
                 }
                 else {
-                    menu_minuman.Tampilkan ();
+                    menu_minuman.Tampilkan (menu_minuman.n_fanta-pembayaran.banyak_produk[4], menu_minuman.n_coke-pembayaran.banyak_produk[5], menu_minuman.harga_badak-pembayaran.banyak_produk[6], menu_minuman.n_sprite-pembayaran.banyak_produk[7]);
 
                     System.out.print ("\nMasukan kode minuman : ");
                     kode = input.nextInt();
