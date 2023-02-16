@@ -38,7 +38,7 @@ public class Tugas_6_Algo2 {
         Belanjaan costumer2 = new Belanjaan (750000, "", "");
         Belanjaan costumer3 = new Belanjaan (5000000,  "", "");
 
-        System.out.println ("Se");
+        System.out.println ("Selamat pagi");
 
     }
 
