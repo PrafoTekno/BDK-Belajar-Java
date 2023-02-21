@@ -229,7 +229,7 @@ public class Tugas_4_Algo2 {
             lanjut = input.nextInt ();
 
             if (lanjut != 1 && lanjut != 2) {
-                System.out.println ("Error 202 : Input yang dimasukan salah\n");
+                System.out.println("Error 202 : Input yang dimasukan salah\n");
             }
 
         }
