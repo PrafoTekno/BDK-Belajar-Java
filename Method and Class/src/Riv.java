@@ -1,52 +1,106 @@
-
 import java.util.Scanner;
 
+class Bonus {
+
+    int saldo;
+    int point;
+    int tambah_point = 0;
+    String nama_pembeli;
+
+    //Constructor
+    Bonus (int saldo_awal, int poin_awal, String nama_pembeli) {
+        this.point = poin_awal;
+        this.saldo = saldo_awal;
+        this.nama_pembeli = nama_pembeli;
+    }
+
+    public int tambahPoint (int nominal_belanja, int belanja_ke_n) {
+
+        if (nominal_belanja > this.saldo) {
+            System.out.println ("\nMaaf saldo kamu tidak cukup");
+            tambah_point = 0;
+        }
+        else {
+
+            this.saldo = this.saldo - nominal_belanja;
+
+            if (belanja_ke_n <= 1) {
+                if (nominal_belanja > 5000000) {
+                    tambah_point = 200;
+                } else {
+                    tambah_point = 100;
+                }
+            }
+            else {
+                if (nominal_belanja > 1000000) {
+                    tambah_point = 50;
+                } else {
+                    tambah_point = 5;
+                }
+            }
+        }
+
+        this.point = point + tambah_point;
+        return this.point;
+    }
+
+    public void Status_saat_ini (String pembeli) {
+        System.out.printf ("Saldo %s adalah Rp %d ---- point %d\n", pembeli, this.saldo, this.point);
+    }
+}
+
 public class Riv {
+    public static void main(String[] args) {
 
-    public static void main (String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        Scanner input = new Scanner (System.in);
-        Pertanyaan question = new Pertanyaan ();
-        Jawaban answer = new Jawaban ();
+        Bonus pembeli1 = new Bonus(10000000, 200, "Agus");
+        Bonus pembeli2 = new Bonus(750000, 100, "Joni");
+        Bonus pembeli3 = new Bonus(5000000, 100, "Stephen");
 
-        System.out.println ("\n======== Mari Kerjakan Quiz ========\n");
+        pembeli1.Status_saat_ini("Agus");
+        pembeli2.Status_saat_ini("Joni");
+        pembeli3.Status_saat_ini("Stephen");
+        String pembeli;
+        int putaran = 1;
+        int nominal_belanja;
+        int status = 1;
 
-        int lanjut = 1;
+        while (status != 0) {
+            System.out.print("Input nama pembeli : ");
+            pembeli = input.next();
 
-        String jawaban_user1 = "";
-        String jawaban_user2 = "";
-        String jawaban_user3 = "";
-        String jawaban_user4 = "";
-        String jawaban_user5 = "";
-
-        while (lanjut == 1 && lanjut != 2) {
-
-            question.Soal();
-            System.out.println ("Masukan 5 jawaban mu berturut-turut : \n");
-
-            System.out.print ("1. ");
-            jawaban_user1 = input.nextLine();
-            System.out.print ("2. ");
-            jawaban_user2 = input.nextLine();
-            System.out.print ("3. ");
-            jawaban_user3 = input.nextLine();
-            System.out.print ("4. ");
-            jawaban_user4 = input.nextLine();
-            System.out.print ("5. ");
-            jawaban_user5 = input.nextLine();
-
-            answer.Save_data (jawaban_user1, jawaban_user2, jawaban_user3, jawaban_user4, jawaban_user5);
-
-            System.out.print ("\nTekan 2 untuk submit jawaban, tekan selain 2 untuk edit jawaban : ");
-            lanjut = input.nextInt();
-
-            if (lanjut != 1) {
-                answer.Edit_data();
+            if (pembeli.equals("Agus")) {
+                System.out.print("\nInput nominal belanja : ");
+                nominal_belanja = input.nextInt();
+                pembeli1.tambahPoint (nominal_belanja, putaran);
+            }
+            else if (pembeli.equals("Joni")) {
+                System.out.print("\nInput nominal belanja customer: ");
+                nominal_belanja = input.nextInt();
+                pembeli2.tambahPoint(nominal_belanja, putaran);
+            }
+            else if (pembeli.equals("Stephen")) {
+                System.out.print("\nInput nominal belanja customer: ");
+                nominal_belanja = input.nextInt();
+                pembeli3.tambahPoint(nominal_belanja, putaran);
+            }
+            else {
+                System.out.println("\nPembeli tidak ditemukan");
+            }
+            putaran = putaran + 1;
+            System.out.println ("\nKlik selain 0 untuk lihat status, klik 0 untuk selesai : ");
+            status = input.nextInt();
+            if (status != 0) {
+                System.out.println ("Ini status saat ini\n");
+                pembeli1.Status_saat_ini("Agus");
+                pembeli2.Status_saat_ini("Joni");
+                pembeli3.Status_saat_ini("Stephen");
             }
 
         }
 
-        question.Itung_Jawaban (jawaban_user1, jawaban_user2, jawaban_user3, jawaban_user4, jawaban_user5);
+        System.out.println("Terima kasih!");
 
     }
 
