@@ -51,7 +51,7 @@ class Anak {
             status[6] += 1;
         }
 
-        for (int i = 0; i < status.length; i++) {
+        for (int i = 0; i < status.length; i++) { //Ngecek stok anak untuk setiap harinya
 
             if (status[i] > 10) {
                 day++;
@@ -146,7 +146,7 @@ class Anak {
 
 }
 
-public class Main {
+public class Modul_9_Salfa {
 
     private enum Kategori {
         BAYI,
@@ -213,7 +213,7 @@ public class Main {
 
             }
 
-            if (status != Kategori.BAYI) {
+            if (status == Kategori.BATITA || status == Kategori.BALITA){
 
                 child[n].Hari_kelas ();
 
