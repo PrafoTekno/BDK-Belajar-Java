@@ -1,135 +1,49 @@
-
 import java.util.Scanner;
-import java.lang.Math;
 
-class Kalkulasi{
+public class Tes {
 
-    public double Tegangan(double a, double b){
-        return a*b;
-    }
+    public static void main (String[] args) {
 
-    public double Arus_Resistansi(double a, double b){
-        return a/b;
-    }
+        String text = "Wow Mobil mu keren banget";
+        Kalimat kal = new Kalimat ();
 
-    public double AC_to_DC(double a){
-        return a/Math.sqrt(2);
-    }
+        //Kasuari.Artikel();
+        String [] kata = kal.Bedah(text);
 
-    public double DC_to_AC(double a){
-        return a*Math.sqrt(2);
-    }
+        System.out.println ("\n"+ text);
 
-    public double r(double a, double b){
-        return Math.sqrt(a*a + b*b);
-    }
+        System.out.println("\n");
 
-    public double sudut(double a, double b){
-        return Math.atan(b/a);
-    }
+        //Scanner input = new Scanner (System.in);
 
-    public double cartesian(double a, double b){
-        return a*Math.cos(b);
-    }
+        for (int i = 0; i < kata.length; i++) {
+            System.out.println(kata[i]);
+        }
 
-    public double imajiner(double a, double b){
-        return a*Math.sin(b);
-    }
-}
+        System.out.println ("\n");
 
-public class Tes
-{
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        Kalkulasi rumus = new Kalkulasi();
-        String x;
-        int T = 1;
-        while(T == 1){
-            System.out.println("Ini adalah sebuah converter system untuk peminat elektronika");
-            System.out.println("Apakah yang ingin anda konversi? (Silahkan pilih huruf)");
-            System.out.println("a. Tegangan\nb. Arus\nc. Resistansi\nd. AC to DC\ne. DC to AC\nf. Cartesian to Polar\ng. Polar to cartesian");
+        kal.text = text;
+        System.out.println (kal.Cari_index("Mobil"));
 
-            x = input.next();
-            double Arus;
-            double Resistansi;
-            double Tegangan;
-            double AC;
-            double DC;
-            double bilangan_imajiner;
-            double bilangan_cartesian;
-            double bilangan_r;
-            double sudut;
-
-
-            if(x.equals("a")){
-                System.out.println("Untuk Tegangan anda harus memiliki nilai Arus dan Resistansi");
-                System.out.println("Silahkan input nilai Arus");
-                Arus = input.nextDouble();
-                System.out.println("Silahkan input nilai Resistansi");
-                Resistansi = input.nextDouble();
-                System.out.printf("Nilai tegangan anda adalah = %.3f", rumus.Tegangan(Arus,Resistansi));
-                System.out.println("\nApakah ada yang ingin di konvert lagi?\nJika iya maka tekan 1, jika tidak maka tekan 0");
-                T = input.nextInt();
+        //Kasuari.Artikel();
+        /*
+        for (int i = 0; i < 21; i++) {
+            kal.text = Kasuari.jawaban[i];
+            for (int j = 0; j < kata.length; j++) {
+                //System.out.printf ("Index ke %d\n", kal.Cari_index(kata[i]));
+                //System.out.println ("Itung kata : "+ kal.itung_kata_sering_muncul);
+                kal.Persentase_Kemunculan_Kata(kata[j]);
+                //System.out.println ();
             }
 
-            else if(x.equals("b")){
-                System.out.println("Untuk Arus anda harus memiliki nilai Tegangan dan Resistansi");
-                System.out.println("Silahkan input nilai Tegangan");
-                Tegangan = input.nextDouble();
-                System.out.println("Silahkan input nilai Resistansi");
-                Resistansi = input.nextDouble();
-                System.out.printf("Nilai tegangan anda adalah = %.3f", rumus.Arus_Resistansi(Tegangan,Resistansi));
-                break;
-            }
+         */
 
-            else if(x.equals("c")){
-                System.out.println("Untuk Resistansi anda harus memiliki nilai Tegangan dan Arus");
-                System.out.println("Silahkan input nilai Tegangan");
-                Tegangan = input.nextDouble();
-                System.out.println("Silahkan input nilai Arus");
-                Arus = input.nextDouble();
-                System.out.printf("Nilai tegangan anda adalah = %.3f", rumus.Arus_Resistansi(Tegangan,Arus));
-                break;
-            }
+        //String nama = input.next();
+        //String kalimat = input.nextLine();
 
-            else if(x.equals("d")){
-                System.out.println("Silahkan input nilai tegangan AC anda");
-                AC = input.nextDouble();
-                System.out.printf("Nilai tegangan DC anda adalah = %.3f", rumus.AC_to_DC(AC));
-                break;
-            }
+       //System.out.println ("\n" + nama);
+        //System.out.println ("\n" + kalimat);
 
-            else if(x.equals("e")){
-                System.out.println("Silahkan input nilai tegangan DC anda");
-                DC = input.nextDouble();
-                System.out.printf("Nilai tegangan AC anda adalah = %.3f", rumus.DC_to_AC(DC));
-                break;
-            }
-
-            else if(x.equals("f")){
-                System.out.println("Untuk mendapatkan nilai polar anda harus memiliki bilangan cartesian dan bilangan imajiner");
-                System.out.println("Silahkan input bilangan cartesian");
-                bilangan_cartesian = input.nextDouble();
-                System.out.println("Silahkan input bilangan imajiner");
-                bilangan_imajiner = input.nextDouble();
-                System.out.printf("Nilai polar anda adalah = %.3f (sudut) %.3f ", rumus.r(bilangan_cartesian,bilangan_imajiner), rumus.sudut(bilangan_cartesian,bilangan_imajiner));
-                break;
-            }
-
-            else if(x.equals("g")){
-                System.out.println("Untuk mendapatkan nilai cartesian anda harus memiliki radius dan sudut");
-                System.out.println("Silahkan input radius");
-                bilangan_r = input.nextDouble();
-                System.out.println("Silahkan input sudut");
-                sudut = input.nextDouble();
-                System.out.printf("Nilai polar anda adalah = %.3f + J(%.3f) ", rumus.cartesian(bilangan_r,sudut), rumus.imajiner(bilangan_r,sudut));
-                break;
-            }
-
-            else {
-                System.out.println("Mohon Masukkan input yang benar");
-            }
         }
 
     }
-}

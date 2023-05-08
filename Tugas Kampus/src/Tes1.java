@@ -1,101 +1,166 @@
-import java.util.Scanner;
+
+import java.util.*;
+
+class Permainan {
+
+    static int [][] card = new int [5][4];
+    static int [] index_card = new int [10];
+    static int [] kartu_tebak1 = new int [10];
+    static int [] kartu_tebak2 = new int [10];
+    static int count = 0;
+
+    private static int Acak () {
+        Random rand = new Random ();
+        return rand.nextInt (10);
+    }
+
+    public static void Jawaban () {
+
+        int tampung;
+
+        for (int i = 0; i < 10; i++) {
+            kartu_tebak1[i] = -1;
+            kartu_tebak2[i] = -1;
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+
+                tampung = 0;
+                while (tampung < 1) {
+                    card[i][j] = Acak();
+                    if (index_card[card[i][j]] < 2) {
+                        index_card[card[i][j]]++;
+                        tampung++;
+                    }
+                }
+
+            }
+        }
+
+        // Tmapilkan
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.printf ("| %d ", card[i][j]);
+            }
+            System.out.println ("|");
+        }
+
+    }
+
+    public static void Tebak (boolean a) {
+
+        int y = -1, x = -1;
+
+        if (a == true) {
+            count++;
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+
+                for (int k = 0; k < count; k++) {  // Buka kartu
+                    if (card[i][j] == kartu_tebak1[k] || card[i][j] == kartu_tebak2[k]) { // cek pasangan kartu apa yang benar
+                        y = i;
+                        x = j;
+                    }
+                }
+
+                if (i == y && j == x) {
+                    System.out.printf ("|   %d   ", card[y][x]);
+                    continue;
+                }
+
+                System.out.printf ("| (%d,%d) ", i, j);
+            }
+            System.out.println ("|");
+        }
+
+    }
+
+}
 
 public class Tes1 {
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
 
-        Member[] members = new Member[5];
-        for (int i = 0; i < 5; i++) {
-            members[i] = new Member();
+        Scanner input = new Scanner (System.in);
+
+        int kartu1_x, kartu1_y;
+        int kartu2_x, kartu2_y;
+        boolean benar = false;
+
+        System.out.println ("Silahkan mengingat 20 kartu berikut selama 20 detik");
+
+        try {
+            Permainan.Jawaban();
+            Thread.sleep (2000);
+        }
+        catch (InterruptedException ex) {
+            ex.printStackTrace();
         }
 
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-        do {
-            System.out.println("Menu:");
-            System.out.println("1. Poin Member");
-            System.out.println("2. Tambah Poin ");
-            System.out.println("3. Pakai Poin ");
-            System.out.println("0. Keluar");
-            System.out.print("Pilih: ");
-            choice = scanner.nextInt();
+        for (int i = 0; i < 99999; i++) {
+            System.out.println ("\n");
+        }
 
-            if (choice == 1) {
-                displayPoint(members);
-            } else if (choice == 2) {
-                addPoint(members, scanner);
-            } else if (choice == 3) {
-                usePoint(members, scanner);
-            } else if (choice == 0) {
-                System.out.println("Terima kasih !!!");
-            } else {
-                System.out.println("Pilihan Tidak Ada!");
+        System.out.println ("Note : pilih kartu (0<y<5; 0<x<4)\n");
+        Permainan.Tebak(benar);
+
+        int n_kalah = 0;
+        int cek_angka;
+
+        while (n_kalah < 3 && Permainan.count < 10) {
+
+            do {
+
+                cek_angka = 0;
+
+                System.out.print ("\nPilih kartu 1 (y,x) : ");
+                kartu1_y = input.nextInt ();
+                kartu1_x = input.nextInt ();
+                System.out.print ("Pilih kartu 2 (y,x) : ");
+                kartu2_y = input.nextInt ();
+                kartu2_x = input.nextInt ();
+
+                for (int r = 0; r < Permainan.count; r++) {
+                    if (Permainan.kartu_tebak1[r] == Permainan.card[kartu1_y][kartu1_x] || Permainan.kartu_tebak1[r] == Permainan.card[kartu2_y][kartu2_x] || Permainan.kartu_tebak2[r] == Permainan.card[kartu1_y][kartu1_x] || Permainan.kartu_tebak2[r] == Permainan.card[kartu2_y][kartu2_x]) {
+                        cek_angka++;
+                    }
+                }
+
+                if (cek_angka > 0) {
+                    System.out.println ("Error 102 : Kamu memilih kartu yang sudah terbuka\n");
+                }
             }
-        } while (choice != 0);
-    }
+            while (cek_angka > 0);
 
-    public static void displayPoint(Member[] members) {
-        System.out.println("Poin member:");
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Member " + (i+1) + ": " + members[i].getPoint());
-        }
-    }
+            if (Permainan.card[kartu1_y][kartu1_x] == Permainan.card[kartu2_y][kartu2_x]) {
+                benar = true;
+                Permainan.count += 1;
 
-    public static void addPoint(Member[] members, Scanner scanner) {
-        System.out.print("Masukan Angka (1-5): ");
-        int memberNumber = scanner.nextInt();
-        if (memberNumber < 1 || memberNumber > 5) {
-            System.out.println("Member Tidak Ada!");
-            return;
-        }
+                Permainan.kartu_tebak1[Permainan.count] = Permainan.card[kartu1_y][kartu1_x];
+                Permainan.kartu_tebak1[Permainan.count] = Permainan.card[kartu2_y][kartu2_x];
 
-        System.out.print("Masukan Total Belanjaan: ");
-        double transactionValue = scanner.nextDouble();
+                System.out.println ("Kamu benar");
+            }
+            else {
+                benar = false;
+                n_kalah += 1;
+                System.out.println ("Kamu salah");
+            }
 
-        members[memberNumber-1].addPoint(transactionValue);
-        System.out.println("Poin Berhasil Di Tambahkan!");
-    }
-
-    public static void usePoint(Member[] members, Scanner scanner) {
-        System.out.print("Masukan Angka (1-5): ");
-        int memberNumber = scanner.nextInt();
-        if (memberNumber < 1 || memberNumber > 5) {
-            System.out.println("Member Tidak Ada!");
-            return;
+            Permainan.Tebak (benar);
         }
 
-        System.out.print("Masukan Nilai Poin : ");
-        int voucherValue = scanner.nextInt();
-
-        members[memberNumber-1].usePoint(voucherValue);
-        System.out.println("Poin Berhasil Di Pakai !");
-    }
-}
-
-class Member {
-    private int point;
-
-    public Member() {
-        this.point = 0;
-    }
-
-    public int getPoint() {
-        return point;
-    }
-
-    public void addPoint(double transactionValue) {
-        if (transactionValue >= 1000000) {
-            int additionalPoint = (int) (transactionValue * 0.03);
-            point += additionalPoint;
+        if (n_kalah >= 3) {
+            System.out.println ("Kamu Kalah");
         }
+        else {
+            System.out.println ("Kamu menang");
+        }
+
     }
 
-    public void usePoint(int voucherValue) {
-        int pointToUse = voucherValue;
-        int maxPointToUse = point;
-        if (pointToUse > maxPointToUse) {
-            pointToUse = maxPointToUse;
-        }
-        point -= pointToUse;
-    }
 }
