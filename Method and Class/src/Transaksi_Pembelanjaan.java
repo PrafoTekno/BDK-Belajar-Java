@@ -76,7 +76,7 @@ class Belanjaan {
 
 }
 
-public class Tugas_6_Algo2 {
+public class Transaksi_Pembelanjaan {
 
     public static void main (String[] args) {
 

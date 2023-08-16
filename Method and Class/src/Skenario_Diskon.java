@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Tes {
+public class Skenario_Diskon {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);

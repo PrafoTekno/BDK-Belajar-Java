@@ -69,7 +69,7 @@ class Database {
 
 }
 
-public class Tugas_5_Algo2 {
+public class Pengerjaan_Quiz {
 
     public static void main (String[] args) {
 
