@@ -104,7 +104,7 @@ class Tiket {
 
 }
 
-public class UAS_2_Patricia {
+public class Beli_Tiket_Bioskop{
 
     public static void main (String[] args) {
 

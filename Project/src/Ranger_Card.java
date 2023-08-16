@@ -5,10 +5,7 @@ import java.util.Random;
 import java.lang.Math;
 
 /*
-Buat server main
-
-Akan ditampilkan leaderboard (peringkatnya)
-Konsep game adalah permainan kartu
+Permaianan kartu, yang melibatkan attack dan deffend
  */
 
 class Profile {
@@ -214,7 +211,7 @@ class Game {  //Untuk save dan load game bukan akun
 
 }
 
-public class Main {
+public class Ranger_Card {
 
     public static void main (String[] args) {
 

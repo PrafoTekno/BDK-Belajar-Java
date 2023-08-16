@@ -16,7 +16,7 @@ class Mahasiswa {
 
 }
 
-public class UAS_2_Riv {
+public class Pendaftaran_Murid_Baru {
 
     public static void main(String[] args) {
 

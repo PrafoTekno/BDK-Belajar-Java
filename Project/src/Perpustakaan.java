@@ -89,7 +89,7 @@ class User {
 
 }
 
-public class UAS_2_Timothy {
+public class Perpustakaan {
 
     enum Menu {
         BORROW,

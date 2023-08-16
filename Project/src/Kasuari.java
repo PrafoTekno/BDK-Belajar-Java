@@ -133,6 +133,7 @@ class Kalimat {
 
     public double Persentase_Kemunculan_Kata (String t) {
 
+        System.out.printf ("Banyak kata sering muncul : %d \n", itung_kata_sering_muncul);
         Cari_index(t);
         double itung_kata = itung_kata_sering_muncul;
         return (itung_kata/panjang_text)*100;
@@ -229,7 +230,7 @@ class Data_User {
 
 }
 
-public class UAS_2_Salfatore {
+public class Kasuari {
 
     static String [][] riwayat_pencarian = new String [Kasuari.MAX][Kasuari.MAX];
 
@@ -274,17 +275,24 @@ public class UAS_2_Salfatore {
 
             if (lanjut == 0) {
 
-                do {
+                if (banyak_user > 0) {
 
-                    System.out.print ("\nLogin (1) | SignUp (2) : ");
-                    pilihan = input.nextInt();
+                    do {
 
-                    if (pilihan != 1 && pilihan != 2) {
-                        System.out.println ("Error 102 : Input tidak sesuai\n");
+                        System.out.print ("\nLogin (1) | SignUp (2) : ");
+                        pilihan = input.nextInt();
+
+                        if (pilihan != 1 && pilihan != 2) {
+                            System.out.println ("Error 102 : Input tidak sesuai\n");
+                        }
+
                     }
+                    while (pilihan != 1 && pilihan != 2);
 
                 }
-                while (pilihan != 1 && pilihan != 2);
+                else {
+                    pilihan = 2;
+                }
 
                 if (pilihan == 1) {
 
@@ -659,18 +667,18 @@ public class UAS_2_Salfatore {
 
         do {
 
-            for (int i = Kasuari.index_awal; i < Kasuari.n_artikel+n; i++) {
+            for (int i = Kasuari.index_awal; i < Kasuari.n_artikel+n; i++) { // Tulis semua judul yang hendak dibuat
                 System.out.printf ("Masukan judul artikel [%d] : ", (i-Kasuari.index_awal)+1);
 
                 judul = input.nextLine ();
                 String [] kata = kalimat.Bedah (judul);
 
-                for (int j = 0; j < Kasuari.n_artikel; j++) {
+                for (int j = 0; j < Kasuari.n_artikel; j++) {  // Cek banyaknya artikel yang ada di database
 
                     kalimat.text = Kasuari.judul[j];
                     double tampung = 0;
 
-                    for (int k = 0; k < kata.length; k++) {
+                    for (int k = 0; k < kata.length; k++) {  //Cek judul bisa dipake atau tidak
 
                         tampung += kalimat.Persentase_Kemunculan_Kata(kata[k]);
                         //System.out.println (tampung);
@@ -721,7 +729,7 @@ public class UAS_2_Salfatore {
                         kalimat.text = Kasuari.jawaban[j];
                         double tampung = 0;
 
-                        for (int k = 0; k < kata.length; k++) {
+                        for (int k = 0; k < kata.length; k++) { // Cek artikel
 
                             tampung += kalimat.Persentase_Kemunculan_Kata(kata[k]);
                             //System.out.printf ("[%d] %.2f\n", k, tampung);
