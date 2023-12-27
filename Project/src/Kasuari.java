@@ -16,7 +16,7 @@ Konsep google :
 7. Penentuan jawaban bener apa engga, itu dilihat dari seberapa membantunya jawaban itu, bagi si penanya
 8. Ada algoritma pencaharian di beranda, kalao topik itu sering dibuka oleh user
 9. User juga bisa buat kary tulisnya sendiri
-10. Ada E banking juga  
+10. Ada E banking juga
 
  */
 
@@ -90,7 +90,7 @@ class Kalimat {
                 if (karakter_text1[j] == karakter_text[i]) {
 
                     if (r == 1) {
-                       s = i;
+                        s = i;
                     }
 
                     cek_index_saat_ini[i]++;
@@ -230,7 +230,7 @@ class Data_User {
 
 }
 
-public class Kasuari {
+public class kasuari {
 
     static String [][] riwayat_pencarian = new String [Kasuari.MAX][Kasuari.MAX];
 
@@ -249,11 +249,11 @@ public class Kasuari {
         System.out.println ("\n");
 
         System.out.println ("\t\t\t0000          0000        0000        00000000    0000    0000        0000        00000000      0000" +
-                          "\n\t\t\t0000      0000           000000       000         0000    0000       000000       000     000   0000" +
-                          "\n\t\t\t0000  0000              00000000      000         0000    0000      00000000      000     000   0000" +
-                          "\n\t\t\t0000  0000             000    000     00000000    0000    0000     000    000     000  000      0000" +
-                          "\n\t\t\t0000      0000        000      000         000    000000000000    000      000    000   000     0000" +
-                          "\n\t\t\t0000          0000   000        000   00000000    000000000000   000        000   000    000    0000");
+                "\n\t\t\t0000      0000           000000       000         0000    0000       000000       000     000   0000" +
+                "\n\t\t\t0000  0000              00000000      000         0000    0000      00000000      000     000   0000" +
+                "\n\t\t\t0000  0000             000    000     00000000    0000    0000     000    000     000  000      0000" +
+                "\n\t\t\t0000      0000        000      000         000    000000000000    000      000    000   000     0000" +
+                "\n\t\t\t0000          0000   000        000   00000000    000000000000   000        000   000    000    0000");
 
         System.out.println ("");
 
@@ -450,7 +450,7 @@ public class Kasuari {
                 while (menu1 < 1 || menu1 > 4);
 
                 if (menu1 == 1) {
-                   lanjut = 1;
+                    lanjut = 1;
                 }
                 else if (menu1 == 2) {
                     lanjut = 0;
@@ -745,9 +745,9 @@ public class Kasuari {
                             }
                         }
 
-                       if (tes == 1) {
-                          break;
-                       }
+                        if (tes == 1) {
+                            break;
+                        }
 
                         Kasuari.jawaban[i] = artikel;
 
@@ -825,5 +825,3 @@ public class Kasuari {
     }
 
 }
-
-

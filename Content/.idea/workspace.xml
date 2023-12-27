@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="048137c6-469a-4540-86a1-5fd01d578d00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Bioskop.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Bioskop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Data_User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Data_User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Kalimat.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Kalimat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Kasuari.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Kasuari.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Library.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Mahasiswa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Mahasiswa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Tes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Tes2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/Tiket.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/Tiket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Patricia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Riv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Salfatore$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Salfatore$Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Salfatore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Timothy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Timothy$Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/UAS_2_Timothy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/out/production/Project/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/out/production/Project/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project/src/Kasuari.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Project/src/Kasuari.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2X1645JG9M8MqMCzHlpPTwH5YH2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/eveambergoodmon/Documents/Belajar Java/Content"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="048137c6-469a-4540-86a1-5fd01d578d00" name="Changes" comment="" />
+      <created>1697784044176</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697784044176</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
