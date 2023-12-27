@@ -173,7 +173,7 @@ class Transaksi {
     }
 }
 
-public class Tugas_4_Algo2 {
+public class Pembelanjaan_Minimarket {
 
     public static void main (String[] args) {
 
